@@ -14,7 +14,9 @@ export async function getStaticPaths() {
 
   return {
     paths: result.data?.results
-      .map((p) => `/pokemon/ssg/${p.name}`)
+      .map((p: any) => {
+        return `/pokemon/ssg/${p.name}`
+      })
       .slice(0, 10),
     fallback: true,
   };

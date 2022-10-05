@@ -12,6 +12,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
     const name = context.params?.name;
     if (typeof name === "string") {
+      // @ts-ignore
       store.dispatch(getPokemonByName.initiate(name));
     }
 
